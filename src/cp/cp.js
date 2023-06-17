@@ -1,7 +1,7 @@
 import path, { dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { execFile, fork } from 'node:child_process';
+import { fork } from 'node:child_process';
 
 const spawnChildProcess = async (args) => {
     const __filename = fileURLToPath(import.meta.url);
