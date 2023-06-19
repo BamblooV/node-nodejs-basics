@@ -8,7 +8,10 @@ const spawnChildProcess = async (args) => {
     const __dirname = dirname(__filename);
     const processFile = path.join(__dirname, 'files', 'script.js');
 
-    fork(processFile, args)
+    const subProcess = fork(processFile, args)
+    subProcess.on('message', (m) => {
+        console.log('PARENT got message:', m);
+    });
 };
 
 // Put your arguments in function call to test this functionality
